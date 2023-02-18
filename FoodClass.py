@@ -16,8 +16,17 @@ class Customer:
         self.__phone = phone
         self.__member_status = member_status
 
+    def get_customerid(self):
+        return self.__customerid
+
     def get_name(self):
         return self.__name
+
+    def get_address(self):
+        return self.__address
+
+    def get_email(self):
+        return self.__email
 
     def get_phone(self):
         return self.__phone
@@ -33,16 +42,14 @@ class Transaction:
         self.__cost = cost
         self.__customerid = customerid
 
-    # def trans_statement(self):
-    # for key in dict:
-    # if dict[key][3] == self.__customerid:
-    # print(f"Order Item: {dict[key][1]} Price: {dict[key][2]}")
+    def get_date(self):
+        return self.__date
 
-    # def calc_cost(self):
-    # self.__cost = 0
-    # for key in dict:
-    # if dict[key][4] == self.__customerid:
-    # self.__cost = +dict[key][3]
+    def get_item_name(self):
+        return self.__item_name
 
-    # def get_cost(self):
-    # return self.__cost
+    def get_cost(self):
+        return self.__cost
+
+    def get_customerid(self):
+        return self.__customerid
