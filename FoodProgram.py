@@ -8,19 +8,37 @@ dict = {
 }
 order_total = 0
 
-
 # customer obejct 1
-customerid = "570"
+customerid = 570
 name = "Danni Sellyar"
 address = "97 Mitchell Way Hewitt Texas 76712"
 email = "dsellyarft@gmpg.org"
 phone = "254-555-9362"
-member_status = "False"
+member_status = True
 customer = fc.Customer(customerid, name, address, email, phone, member_status)
 
 # transaction 1
 date = "2/15/2023"
 item_name = "The Lone Patty"
-cost = "16"
-cusomterid = 569
+cost = 16
+customerid = 569
 transaction1 = fc.Transaction(date, item_name, cost, customerid)
+
+# Statement
+
+print("Customer Name:", customer.get_name())
+print("Phone:", customer.get_phone())
+
+for key in dict:
+    if dict[key][3] == customerid:
+        print(f"Order Item: {dict[key][1]}   Price: ${dict[key][2]}")
+
+for key in dict:
+    if dict[key][3] == customerid:
+        order_total += dict[key][2]
+print("Total Cost:", order_total)
+
+if customer.get_member_status() == True:
+    print("Member Discount:", (order_total * 0.2))
+
+print("Total Cost after discount:", (order_total * 0.8))
